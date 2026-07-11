@@ -869,3 +869,367 @@ body::before{
     left:-60%;
 
 }
+
+/* ---------------- ABOUT ---------------- */
+
+.about{
+
+    padding:90px 20px;
+
+    display:flex;
+    justify-content:center;
+
+}
+
+.card{
+
+    width:min(950px,100%);
+
+    padding:60px;
+
+    border-radius:30px;
+
+    background:var(--glass);
+
+    border:1px solid var(--glass-border);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35),
+        inset 0 1px 1px rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(212,175,55,.35);
+
+}
+
+.card h2{
+
+    font-family:'Cinzel',serif;
+
+    color:var(--gold);
+
+    font-size:42px;
+
+    margin-bottom:28px;
+
+}
+
+.card p{
+
+    color:var(--text);
+
+    font-size:18px;
+
+    line-height:2;
+
+}
+
+/* ---------------- CTA ---------------- */
+
+.cta{
+
+    padding:80px 20px;
+
+    text-align:center;
+
+}
+
+.cta h2{
+
+    font-family:'Cinzel',serif;
+
+    color:var(--gold);
+
+    font-size:44px;
+
+    margin-bottom:40px;
+
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer{
+
+    padding:50px 20px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    color:rgba(255,255,255,.7);
+
+}
+
+footer p:first-child{
+
+    margin-bottom:10px;
+
+}
+
+/* ---------------- STARS ---------------- */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.18;
+
+    background-image:
+
+        radial-gradient(2px 2px at 15% 20%,white,transparent),
+        radial-gradient(2px 2px at 80% 18%,white,transparent),
+        radial-gradient(1px 1px at 45% 35%,white,transparent),
+        radial-gradient(2px 2px at 30% 65%,white,transparent),
+        radial-gradient(1px 1px at 72% 72%,white,transparent),
+        radial-gradient(2px 2px at 90% 50%,white,transparent),
+        radial-gradient(1px 1px at 8% 80%,white,transparent),
+        radial-gradient(2px 2px at 60% 90%,white,transparent);
+
+    animation:starsMove 40s linear infinite;
+
+}
+
+@keyframes starsMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-120px);
+
+    }
+
+}
+
+@keyframes floatLogo{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ---------------- SCROLLBAR ---------------- */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#071b42;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--gold);
+
+    border-radius:20px;
+
+}
+
+/* ---------------- SELECTION ---------------- */
+
+::selection{
+
+    background:var(--gold);
+
+    color:#071b42;
+
+}
+
+/* ---------------- TABLET ---------------- */
+
+@media (max-width:900px){
+
+.header{
+
+    padding:18px 24px;
+
+}
+
+.brand span{
+
+    font-size:24px;
+
+}
+
+.menu{
+
+    gap:16px;
+
+}
+
+.logo{
+
+    width:320px;
+
+}
+
+.hero{
+
+    padding-top:150px;
+
+}
+
+.hero h1{
+
+    font-size:52px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+}
+
+.card{
+
+    padding:40px;
+
+}
+
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width:650px){
+
+.header{
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px 20px;
+
+}
+
+.menu{
+
+    width:100%;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+}
+
+.menu a{
+
+    font-size:15px;
+
+}
+
+.lang{
+
+    font-size:15px;
+
+}
+
+.hero{
+
+    padding-top:190px;
+
+}
+
+.logo{
+
+    width:285px;
+
+}
+
+.hero h1{
+
+    font-size:38px;
+
+}
+
+.hero h1::after{
+
+    width:120px;
+
+}
+
+.hero p{
+
+    font-size:17px;
+
+}
+
+.card{
+
+    padding:30px;
+
+}
+
+.card h2{
+
+    font-size:30px;
+
+}
+
+.card p{
+
+    font-size:16px;
+
+    line-height:1.8;
+
+}
+
+.cta h2{
+
+    font-size:32px;
+
+}
+
+.button{
+
+    padding:16px 28px;
+
+    font-size:16px;
+
+}
+
+}
