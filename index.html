@@ -19,7 +19,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -30,7 +29,7 @@
 
     <a href="#hero" class="brand">
 
-        <img src="assets/logo.png" alt="MenMs Origin Logo">
+        <img src="assets/logo.png" alt="MenMs Origin">
 
         <span>MenMs Origin</span>
 
@@ -41,14 +40,15 @@
         <a href="#about" id="nav-story">About</a>
 
         <a href="https://www.cardmarket.com/en/Magic/Users/MenMsOrigin"
-            target="_blank"
-            rel="noopener noreferrer">
+           target="_blank"
+           rel="noopener noreferrer"
+           id="nav-cardmarket">
 
             Cardmarket
 
         </a>
 
-        <button id="lang-switch" type="button">
+        <button id="lang-switch" class="lang" type="button">
             NL
         </button>
 
@@ -56,19 +56,18 @@
 
 </header>
 
-<!-- HERO -->
-
 <section class="hero" id="hero" data-aos="fade-up">
 
     <div class="hero-glow"></div>
 
-    <img
-        src="assets/logo.png"
-        class="logo"
-        alt="MenMs Origin Logo">
+    <img src="assets/logo.png"
+         class="logo"
+         alt="MenMs Origin Logo">
 
     <h1 id="hero-title">
+
         Every Card Has A Story.
+
     </h1>
 
     <p id="hero-text">
@@ -83,8 +82,8 @@
     </p>
 
     <a
-        id="hero-button"
         class="button"
+        id="hero-button"
         href="https://www.cardmarket.com/en/Magic/Users/MenMsOrigin"
         target="_blank"
         rel="noopener noreferrer">
@@ -94,8 +93,6 @@
     </a>
 
 </section>
-
-<!-- ABOUT -->
 
 <section class="about" id="about" data-aos="fade-up">
 
@@ -109,16 +106,15 @@
 
         <p id="about-text">
 
-            MenMs Origin began with a simple passion for Magic: The Gathering.
+            MenMs Origin began with a passion for Magic: The Gathering.
 
-            What started as collecting cards, opening boosters and building decks
+            What started as collecting, opening boosters and building decks
             gradually became a trusted Cardmarket store.
 
-            Every card we sell is carefully inspected before shipment because
-            quality, reliability and customer satisfaction are our highest priorities.
+            Every card is carefully inspected before shipment because quality,
+            reliability and customer satisfaction always come first.
 
-            We believe that every card has its own story—and we're proud to help
-            continue yours.
+            Every card has a story—and we're proud to help yours continue.
 
         </p>
 
@@ -126,23 +122,21 @@
 
 </section>
 
-<!-- WHY -->
-
 <section class="about" data-aos="fade-up">
 
     <div class="card">
 
-        <h2>
+        <h2 id="why-title">
 
             Why MenMs Origin?
 
         </h2>
 
-        <p>
+        <p id="why-text">
 
             🛡 Carefully inspected cards before shipping.<br><br>
 
-            📦 Safe and secure packaging.<br><br>
+            📦 Secure packaging for every order.<br><br>
 
             ⭐ Personal service and fast communication.<br><br>
 
@@ -154,8 +148,6 @@
 
 </section>
 
-<!-- CTA -->
-
 <section class="cta" data-aos="zoom-in">
 
     <h2 id="cta-title">
@@ -165,15 +157,10 @@
     </h2>
 
     <a
-
-        id="cta-button"
-
         class="button"
-
+        id="cta-button"
         href="https://www.cardmarket.com/en/Magic/Users/MenMsOrigin"
-
         target="_blank"
-
         rel="noopener noreferrer">
 
         Visit Cardmarket
@@ -184,13 +171,9 @@
 
 <footer>
 
-    <p>
+    <p>© 2026 MenMs Origin</p>
 
-        © 2026 MenMs Origin
-
-    </p>
-
-    <p>
+    <p id="footer-text">
 
         Every Card Has A Story.
 
@@ -198,21 +181,16 @@
 
 </footer>
 
-<script src="script.js"></script>
-
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
-
 AOS.init({
-
     duration:900,
-
     once:true
-
 });
-
 </script>
+
+<script src="script.js"></script>
 
 </body>
 
