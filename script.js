@@ -1,81 +1,102 @@
-// ========================================
-// MenMs Origin
-// script.js
-// ========================================
-
 const translations = {
-    en: {
-        navStory: "Our Story",
 
-        heroTitle: "Every Card Has a Story.",
-        heroText: "Premium Magic: The Gathering cards for players and collectors.",
-        heroButton: "Visit our Cardmarket Store",
+    en:{
 
-        aboutTitle: "Our Story",
-        aboutText: "MenMs Origin started from a shared passion for Magic: The Gathering. What began with opening boosters, collecting cards and building decks slowly evolved into a trusted Cardmarket store. We carefully inspect every card before shipping because quality, reliability and customer satisfaction always come first. We truly believe that every card has a story.",
+        navStory:"About",
 
-        ctaTitle: "Ready for your next card?",
-        ctaButton: "Shop on Cardmarket",
+        heroTitle:"Every Card Has A Story.",
 
-        language: "NL"
+        heroText:"Trusted by players. Built by collectors.<br><br>Premium Magic: The Gathering cards, carefully inspected and shipped with care.",
+
+        heroButton:"Visit Cardmarket",
+
+        aboutTitle:"About MenMs Origin",
+
+        aboutText:"MenMs Origin began with a passion for Magic: The Gathering. What started as collecting, opening boosters and building decks gradually became a trusted Cardmarket store. Every card is carefully inspected before shipment because quality, reliability and customer satisfaction always come first. Every card has a story—and we're proud to help yours continue.",
+
+        whyTitle:"Why MenMs Origin?",
+
+        whyText:"🛡 Carefully inspected cards before shipping.<br><br>📦 Secure packaging for every order.<br><br>⭐ Personal service and fast communication.<br><br>🎴 Built by collectors, for collectors.",
+
+        ctaTitle:"Ready for your next card?",
+
+        ctaButton:"Visit Cardmarket",
+
+        footer:"Every Card Has A Story."
+
     },
 
-    nl: {
-        navStory: "Ons Verhaal",
+    nl:{
 
-        heroTitle: "Elke kaart heeft een verhaal.",
-        heroText: "Premium Magic: The Gathering kaarten voor spelers en verzamelaars.",
-        heroButton: "Bezoek onze Cardmarket Store",
+        navStory:"Over",
 
-        aboutTitle: "Ons Verhaal",
-        aboutText: "MenMs Origin is ontstaan uit een passie voor Magic: The Gathering. Wat begon met boosters openen, kaarten verzamelen en decks bouwen groeide uit tot een betrouwbare Cardmarket-winkel. Iedere kaart wordt zorgvuldig gecontroleerd voordat deze wordt verzonden. Kwaliteit, betrouwbaarheid en persoonlijke service staan bij ons voorop. Wij geloven dat iedere kaart een eigen verhaal heeft.",
+        heroTitle:"Elke kaart heeft een verhaal.",
 
-        ctaTitle: "Klaar voor jouw volgende kaart?",
-        ctaButton: "Bekijk Cardmarket",
+        heroText:"Vertrouwd door spelers. Gebouwd door verzamelaars.<br><br>Premium Magic: The Gathering kaarten, zorgvuldig gecontroleerd en met zorg verzonden.",
 
-        language: "EN"
+        heroButton:"Bezoek Cardmarket",
+
+        aboutTitle:"Over MenMs Origin",
+
+        aboutText:"MenMs Origin is ontstaan uit een passie voor Magic: The Gathering. Wat begon met verzamelen, boosters openen en decks bouwen groeide uit tot een betrouwbare Cardmarket-winkel. Elke kaart wordt zorgvuldig gecontroleerd voordat deze wordt verzonden. Kwaliteit, betrouwbaarheid en persoonlijke service staan altijd voorop. Iedere kaart heeft een verhaal.",
+
+        whyTitle:"Waarom MenMs Origin?",
+
+        whyText:"🛡 Elke kaart wordt zorgvuldig gecontroleerd.<br><br>📦 Veilig verpakt voor iedere bestelling.<br><br>⭐ Persoonlijke service en snelle communicatie.<br><br>🎴 Door verzamelaars, voor verzamelaars.",
+
+        ctaTitle:"Klaar voor je volgende kaart?",
+
+        ctaButton:"Bezoek Cardmarket",
+
+        footer:"Elke kaart heeft een verhaal."
+
     }
+
 };
 
-let currentLanguage = "en";
+let language = localStorage.getItem("language") || "en";
 
-function setLanguage(lang){
+function updateLanguage(){
 
-    currentLanguage = lang;
+    const t = translations[language];
 
-    const t = translations[lang];
-
-    document.documentElement.lang = lang;
+    document.documentElement.lang = language;
 
     document.getElementById("nav-story").textContent = t.navStory;
 
     document.getElementById("hero-title").textContent = t.heroTitle;
-    document.getElementById("hero-text").textContent = t.heroText;
+
+    document.getElementById("hero-text").innerHTML = t.heroText;
+
     document.getElementById("hero-button").textContent = t.heroButton;
 
     document.getElementById("about-title").textContent = t.aboutTitle;
+
     document.getElementById("about-text").textContent = t.aboutText;
 
+    document.getElementById("why-title").textContent = t.whyTitle;
+
+    document.getElementById("why-text").innerHTML = t.whyText;
+
     document.getElementById("cta-title").textContent = t.ctaTitle;
+
     document.getElementById("cta-button").textContent = t.ctaButton;
 
-    document.querySelector(".lang").textContent = t.language;
+    document.getElementById("footer-text").textContent = t.footer;
+
+    document.getElementById("lang-switch").textContent =
+        language === "en" ? "NL" : "EN";
+
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.getElementById("lang-switch").addEventListener("click",function(){
 
-    const languageButton = document.querySelector(".lang");
+    language = language === "en" ? "nl" : "en";
 
-    languageButton.addEventListener("click", () => {
+    localStorage.setItem("language",language);
 
-        if(currentLanguage === "en"){
-            setLanguage("nl");
-        }else{
-            setLanguage("en");
-        }
-
-    });
-
-    setLanguage("en");
+    updateLanguage();
 
 });
+
+updateLanguage();
